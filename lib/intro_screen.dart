@@ -1,3 +1,5 @@
+import 'dart:async';
+import 'package:nms_productivity_portal/Dashboard.dart';
 import 'package:flutter/material.dart';
 
 class IntroScreen extends StatefulWidget {
@@ -10,8 +12,8 @@ class _IntroScreenState extends State<IntroScreen> {
   @override
   void initState() {
 
-    /*super.initState();
-    Timer(Duration(seconds: 3), () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MyHomePage())));*/
+    super.initState();
+    Timer(Duration(seconds: 3), () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Dashboard())));
   }
 
   @override

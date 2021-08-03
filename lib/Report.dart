@@ -53,6 +53,10 @@ class _ReportState extends State<Report> {
                       new Padding(
                         padding: new EdgeInsets.all(7.0),
                         child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.white, // background
+                            onPrimary: Color.fromRGBO(49, 87, 110, 1.0),// foreground
+                          ),
                           child: new Text("Overall Monthly",
                             style: TextStyle(
                                 color: Colors.black,
@@ -62,11 +66,7 @@ class _ReportState extends State<Report> {
                           onPressed: () {
                             print('Overall Monthly');
                           },
-                          /* style: ElevatedButton.styleFrom(
-                            shape: new RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(20.0),
-                            ),
-                          ),*/
+
                         ),
                       ),
 
@@ -102,6 +102,10 @@ class _ReportState extends State<Report> {
                       new Padding(
                         padding: new EdgeInsets.all(7.0),
                         child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.white, // background
+                            onPrimary: Color.fromRGBO(49, 87, 110, 1.0),// foreground
+                          ),
                           child: new Text("Overall Yearly",
                             style: TextStyle(
                                 color: Colors.black,

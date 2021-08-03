@@ -2,6 +2,7 @@ import 'package:nms_productivity_portal/Report.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:nms_productivity_portal/PlaceholderWidget.dart';
+import 'package:nms_productivity_portal/report_details.dart';
 
 
 class Dashboard extends StatefulWidget{
@@ -113,46 +114,61 @@ class InitState extends State<Dashboard>{
 
 
 
+               //code for monthly
                 new Card(
                   child: new Column(
                     children: <Widget>[
                       new Padding(
                         padding: new EdgeInsets.all(7.0),
                         child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.white, // background
+                            onPrimary: Color.fromRGBO(49, 87, 110, 1.0),// foreground
+                          ),
                         child: new Text("Overall Monthly",
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: 20.0,
                               fontWeight: FontWeight.bold
                           ),),
-                          onPressed: () {
-                          print('Overall Monthly');
+                          onPressed: () =>
+                          {
+                            Navigator.push(context, MaterialPageRoute(
+                                builder: (context) => Report()
+                            ))
                           },
-                         /* style: ElevatedButton.styleFrom(
-                            shape: new RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(20.0),
-                            ),
-                          ),*/
                       ),
                       ),
-
                       new Image.asset("assets/nmslogo.png"),
                       new Padding(
                           padding: new EdgeInsets.all(7.0),
                           child: new Row(
                             children: <Widget>[
                               new Padding(
-                                padding: new EdgeInsets.all(7.0),
-                                child: new Text('View Details',style: new TextStyle(fontSize: 18.0),),
-                              ),
-                              DropdownButton<String>(
-                                items: <String>['A', 'B', 'C', 'D'].map((String value) {
-                                  return DropdownMenuItem<String>(
-                                    value: value,
-                                    child: new Text(value),
-                                  );
-                                }).toList(),
-                                onChanged: (_) {},
+                                  padding: new EdgeInsets.all(7.0),
+                                  child: ElevatedButton.icon(
+                                    icon: Icon(
+                                      Icons.arrow_right,
+                                      color: Color.fromRGBO(49, 87, 110, 1.0),
+                                      size: 50.0,
+                                    ),
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Colors.white, // background
+                                      onPrimary: Color.fromRGBO(49, 87, 110, 1.0),// foreground
+                                    ),
+                                    label: new Text("View Details",
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 20.0,
+                                          fontWeight: FontWeight.bold
+                                      ),),
+                                    onPressed: () =>
+                                    {
+                                      Navigator.push(context, MaterialPageRoute(
+                                          builder: (context) => reportdetails()
+                                      ))
+                                    },
+                                  )
                               )
 
 
@@ -162,12 +178,19 @@ class InitState extends State<Dashboard>{
                     ],
                   ),
                 ),
+
+
+                //code for yearly
                 new Card(
                   child: new Column(
                     children: <Widget>[
                       new Padding(
                         padding: new EdgeInsets.all(7.0),
-                        child: ElevatedButton(
+                       child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                primary: Colors.white, // background
+                  onPrimary: Color.fromRGBO(49, 87, 110, 1.0),// foreground
+                ),
                           child: new Text("Overall Yearly",
                             style: TextStyle(
                                 color: Colors.black,
@@ -192,29 +215,32 @@ class InitState extends State<Dashboard>{
                           padding: new EdgeInsets.all(7.0),
                           child: new Row(
                             children: <Widget>[
-                              new Padding(
-                                padding: new EdgeInsets.all(7.0),
-                                child: new Text('View Details',style: new TextStyle(fontSize: 18.0),),
-                              ),
-                              DropdownButton<String>(
-                                items: <String>['A', 'B', 'C', 'D'].map((String value) {
-                                  return DropdownMenuItem<String>(
-                                    value: value,
-                                    child: new Text(value),
-                                  );
-                                }).toList(),
-                                onChanged: (_) {},
-                                /*hint:Text("Select item"),
-                                disabledHint:Text("Disabled")
-                                elevation: 8,
-                                style:TextStyle(color:Colors.white, fontSize: 16),
-                                icon: Icon(Icons.arrow_drop_down_circle),
-                                iconDisabledColor: Colors.red,
-                                iconEnabledColor: Colors.green,
-                                isExpanded: true,*/
-                              )
-
-
+    new Padding(
+    padding: new EdgeInsets.all(7.0),
+    child: ElevatedButton.icon(
+    icon: Icon(
+    Icons.arrow_right,
+    color: Color.fromRGBO(49, 87, 110, 1.0),
+    size: 50.0,
+    ),
+    style: ElevatedButton.styleFrom(
+    primary: Colors.white, // background
+    onPrimary: Color.fromRGBO(49, 87, 110, 1.0),// foreground
+    ),
+    label: new Text("View Details",
+    style: TextStyle(
+    color: Colors.black,
+    fontSize: 20.0,
+    fontWeight: FontWeight.bold
+    ),),
+      onPressed: () =>
+      {
+        Navigator.push(context, MaterialPageRoute(
+            builder: (context) => reportdetails()
+        ))
+      },
+    )
+    )
                             ],
                           )
                       )

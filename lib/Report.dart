@@ -1,100 +1,34 @@
+import 'package:nms_productivity_portal/Dashboard.dart';
 import 'package:nms_productivity_portal/Report.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:nms_productivity_portal/PlaceholderWidget.dart';
+import 'package:flutter/material.dart';
 
+int _selectedPageIndex = 0;
 
-class Dashboard extends StatefulWidget{
+var _pages = [
+  Report(),
+  /*ProfilePage(),*/
+];
+class Report extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => InitState();
+  _ReportState createState() => _ReportState();
 }
-
-class InitState extends State<Dashboard>{
-  _getSizes() {
-  }
-
-  _getPositions(){
-  }
-  /* DateTime selectedDate = DateTime.now();
-
-  /// This decides which day will be enabled
-  /// This will be called every time while displaying day in calender.
-  bool _decideWhichDayToEnable(DateTime day) {
-    if ((day.isAfter(DateTime.now().subtract(Duration(days: 1))) &&
-        day.isBefore(DateTime.now().add(Duration(days: 10))))) {
-      return true;
-    }
-    return false;
-  }
-
-  _selectDate(BuildContext context) {
-    final ThemeData theme = Theme.of(context);
-    assert(theme.platform != null);
-    switch (theme.platform) {
-      case TargetPlatform.android:
-
-      case TargetPlatform.fuchsia:
-      case TargetPlatform.linux:
-      case TargetPlatform.windows:
-        return buildMaterialDatePicker(context);
-      case TargetPlatform.iOS:
-      case TargetPlatform.macOS:
-        return buildCupertinoDatePicker(context);
-    }
-  }*/
-
-
+class _ReportState extends State<Report> {
 
   @override
   Widget build(BuildContext context) {
-    return initWidget();
-  }
-
-  void _onTabTapped(int index){
-    setState(() {
-      _currentIndex = index;
-    });
-  }
-  int _currentIndex = 0;
-  final List<Widget> _children = <Widget>[
-    Icon(
-      Icons.dashboard_outlined,
-      size: 150,
-    ),
-    Icon(
-      Icons.add,
-      size: 150,
-    ),
-    Icon(
-      Icons.receipt,
-      size: 150,
-    ),
-    /* PlaceholderWidget(Colors.purpleAccent),
-    PlaceholderWidget(Colors.blueAccent),*/
-  ];
-
-
-  Widget initWidget() {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.orangeAccent,
-          title: Text("NMS Productivity Portal"),
+          title: Text("Report"),
+          elevation: .1,
+          backgroundColor: Color.fromRGBO(49, 87, 110, 1.0),
           actions: <Widget>[
-            Padding(
-                padding: EdgeInsets.only(right: 20.0),
-                child: GestureDetector(
-                  onTap: () => debugPrint("user"),
-                  child: Icon(
-                    Icons.account_circle,
-                    size: 30.0,
-                  ),
-                )
+            new IconButton(
+                icon: new Icon(Icons.account_circle),
+                onPressed: () => debugPrint("notification")
             ),
           ],
         ),
-
-
-
         body: Container(
           padding: new EdgeInsets.only(left: 16.0, bottom: 0.0, right: 16.0,),
           child: new Column(
@@ -119,21 +53,21 @@ class InitState extends State<Dashboard>{
                       new Padding(
                         padding: new EdgeInsets.all(7.0),
                         child: ElevatedButton(
-                        child: new Text("Overall Monthly",
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.bold
-                          ),),
+                          child: new Text("Overall Monthly",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.bold
+                            ),),
                           onPressed: () {
-                          print('Overall Monthly');
+                            print('Overall Monthly');
                           },
-                         /* style: ElevatedButton.styleFrom(
+                          /* style: ElevatedButton.styleFrom(
                             shape: new RoundedRectangleBorder(
                               borderRadius: new BorderRadius.circular(20.0),
                             ),
                           ),*/
-                      ),
+                        ),
                       ),
 
                       new Image.asset("assets/nmslogo.png"),
@@ -178,12 +112,12 @@ class InitState extends State<Dashboard>{
                             print('Overall Yearly');
                           },*/
 
-                            onPressed: () =>
-                            {
-                              Navigator.push(context, MaterialPageRoute(
-                                  builder: (context) => Report()
-                              ))
-                            },
+                          onPressed: () =>
+                          {
+                            Navigator.push(context, MaterialPageRoute(
+                                builder: (context) => Report()
+                            ))
+                          },
 
                         ),
                       ),
@@ -234,8 +168,6 @@ class InitState extends State<Dashboard>{
 
 
         bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _currentIndex,
-          onTap: _onTabTapped,
           backgroundColor: Colors.white,
           selectedFontSize: 20,
           unselectedFontSize: 15,
@@ -256,15 +188,16 @@ class InitState extends State<Dashboard>{
               label: 'Report',
             ),
           ],
+    currentIndex: _selectedPageIndex,
+    onTap: (index) {
+      setState(() {
+        _selectedPageIndex = index;
+      });
+    },
 
-        )
+    ),
     );
+
 
   }
 }
-
-
-
-
-
-

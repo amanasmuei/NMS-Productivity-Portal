@@ -2,6 +2,7 @@ import 'package:nms_productivity_portal/Dashboard.dart';
 import 'package:nms_productivity_portal/Report.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:nms_productivity_portal/signin_page.dart';
 
 int _selectedPageIndex = 0;
 
@@ -22,10 +23,25 @@ class _reportdetailsState extends State<reportdetails> {
         title: Text("Report Details"),
         elevation: .1,
         backgroundColor: Color.fromRGBO(49, 87, 110, 1.0),
-        actions: <Widget>[
-          new IconButton(
-              icon: new Icon(Icons.account_circle),
-              onPressed: () => debugPrint("notification")
+        actions: [
+          PopupMenuButton<String>(
+            icon: Icon(Icons.account_circle),
+            onSelected: (String result) {
+              switch (result) {
+                case 'Logout':
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SignInPage()),
+                  );
+                  break;
+              }
+            },
+            itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+              const PopupMenuItem<String>(
+                value: 'Logout',
+                child: Text('Logout'),
+              ),
+            ],
           ),
         ],
       ),

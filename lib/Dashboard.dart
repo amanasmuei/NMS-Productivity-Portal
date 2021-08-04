@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:nms_productivity_portal/PlaceholderWidget.dart';
 import 'package:nms_productivity_portal/report_details.dart';
+import 'package:nms_productivity_portal/signin_page.dart';
 
 
 class Dashboard extends StatefulWidget{
@@ -84,16 +85,25 @@ class InitState extends State<Dashboard>{
         appBar: AppBar(
           backgroundColor: Colors.orangeAccent,
           title: Text("NMS Productivity Portal"),
-          actions: <Widget>[
-            Padding(
-                padding: EdgeInsets.only(right: 20.0),
-                child: GestureDetector(
-                  onTap: () => debugPrint("user"),
-                  child: Icon(
-                    Icons.account_circle,
-                    size: 30.0,
-                  ),
-                )
+          actions: [
+            PopupMenuButton<String>(
+              icon: Icon(Icons.account_circle),
+              onSelected: (String result) {
+                switch (result) {
+                  case 'Logout':
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SignInPage()),
+                    );
+                    break;
+                }
+              },
+              itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                const PopupMenuItem<String>(
+                  value: 'Logout',
+                  child: Text('Logout'),
+                ),
+              ],
             ),
           ],
         ),

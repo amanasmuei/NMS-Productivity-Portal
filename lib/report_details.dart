@@ -37,7 +37,7 @@ class _reportdetailsState extends State<reportdetails> {
             textDirection: TextDirection.rtl,
             children: [
               Text(
-                'Dashboard 2021-07',
+                'Section: ALL: 2021',
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 30.0,

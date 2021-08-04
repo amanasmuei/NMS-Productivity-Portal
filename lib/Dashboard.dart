@@ -44,6 +44,10 @@ class InitState extends State<Dashboard>{
     }
   }*/
 
+  String dropdownvalue = '1';
+  var items =  ['1','2','3','4','5','6','7','8','9','10','11','12'];
+
+
 
 
   @override
@@ -110,6 +114,27 @@ class InitState extends State<Dashboard>{
                       fontSize: 30.0,
                       fontWeight: FontWeight.bold
                   ),
+                ),
+          Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    DropdownButton(
+                      value: dropdownvalue,
+                      icon: Icon(Icons.keyboard_arrow_down),
+                      items:items.map((String items) {
+                        return DropdownMenuItem(
+                            value: items,
+                            child: Text(items)
+                        );
+                      }
+                      ).toList(),
+                      onChanged: (String newValue){
+                        setState(() {
+                          dropdownvalue = newValue;
+                        });
+                      },
+                    ),
+                  ],
                 ),
 
 

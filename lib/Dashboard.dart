@@ -110,7 +110,9 @@ class InitState extends State<Dashboard>{
 
 
 
-        body: Container(
+        body:    /*_children[_currentIndex],*/
+        SingleChildScrollView(
+    child: Container(
           padding: new EdgeInsets.only(left: 16.0, bottom: 0.0, right: 16.0,),
           child: new Column(
               mainAxisSize: MainAxisSize.max,
@@ -150,7 +152,7 @@ class InitState extends State<Dashboard>{
 
 
                //code for monthly
-                new Card(
+                    new Card(
                   child: new Column(
                     children: <Widget>[
                       new Padding(
@@ -288,8 +290,9 @@ class InitState extends State<Dashboard>{
 
               ]),
         ),
+        ),
 
-        /*_children[_currentIndex],*/
+
 
 
 

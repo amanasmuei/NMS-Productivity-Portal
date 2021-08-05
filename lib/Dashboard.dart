@@ -84,7 +84,7 @@ class InitState extends State<Dashboard>{
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.orangeAccent,
-          title: Text("FSTP Productivity Portal"),
+          title: Text("NMS Productivity Portal"),
           actions: [
             PopupMenuButton<String>(
               icon: Icon(Icons.account_circle),
@@ -112,9 +112,9 @@ class InitState extends State<Dashboard>{
 
         body:    /*_children[_currentIndex],*/
         SingleChildScrollView(
-          child: Container(
+    child: Container(
           padding: new EdgeInsets.only(left: 16.0, bottom: 0.0, right: 16.0,),
-            child: new Column(
+          child: new Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               textDirection: TextDirection.rtl,
@@ -127,8 +127,7 @@ class InitState extends State<Dashboard>{
                       fontWeight: FontWeight.bold
                   ),
                 ),
-
-                Row(
+          Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     DropdownButton(
@@ -154,69 +153,6 @@ class InitState extends State<Dashboard>{
 
                //code for monthly
                     new Card(
-                      child: new Column(
-                        children: <Widget>[
-                          new Padding(
-                        padding: new EdgeInsets.all(7.0),
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                primary: Colors.white, // background
-                                // onPrimary: Color.fromRGBO(49, 87, 110, 1.0),// foreground
-                                ),
-                              child: new Text("Overall Monthly",
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 20.0,
-                                    fontWeight: FontWeight.bold
-                                ),
-                              ),
-                              onPressed: () => {
-                                Navigator.push(context, MaterialPageRoute(
-                                builder: (context) => Report()
-                                ))
-                              },
-                            ),
-                          ),
-                          new Image.asset("assets/nmslogo.png"),
-                          new Padding(
-                              padding: new EdgeInsets.all(7.0),
-                              child: new Row(
-                                children: <Widget>[
-                                  new Padding(
-                                      padding: new EdgeInsets.all(7.0),
-                                      child: ElevatedButton.icon(
-                                        icon: Icon(
-                                          Icons.arrow_right,
-                                          color: Color.fromRGBO(49, 87, 110, 1.0),
-                                          size: 50.0,
-                                        ),
-                                        style: ElevatedButton.styleFrom(
-                                          primary: Colors.white, // background
-                                          // onPrimary: Color.fromRGBO(49, 87, 110, 1.0),// foreground
-                                        ),
-                                        label: new Text("View Details",
-                                          style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 20.0,
-                                          fontWeight: FontWeight.bold
-                                          ),
-                                        ),
-                                        onPressed: () => {
-                                          Navigator.push(context, MaterialPageRoute(
-                                          builder: (context) => reportdetails()
-                                          ))
-                                        },
-                                      )
-                                  )
-                                ],
-                              )
-                          )
-                        ],
-                      ),
-                    ),
-
-                //code for yearly
-                new Card(
                   child: new Column(
                     children: <Widget>[
                       new Padding(
@@ -224,8 +160,74 @@ class InitState extends State<Dashboard>{
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             primary: Colors.white, // background
-                            // onPrimary: Color.fromRGBO(49, 87, 110, 1.0),// foreground
-                            ),
+                            onPrimary: Color.fromRGBO(49, 87, 110, 1.0),// foreground
+                          ),
+                        child: new Text("Overall Monthly",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold
+                          ),),
+                          onPressed: () =>
+                          {
+                            Navigator.push(context, MaterialPageRoute(
+                                builder: (context) => Report()
+                            ))
+                          },
+                      ),
+                      ),
+                      new Image.asset("assets/nmslogo.png"),
+                      new Padding(
+                          padding: new EdgeInsets.all(7.0),
+                          child: new Row(
+                            children: <Widget>[
+                              new Padding(
+                                  padding: new EdgeInsets.all(7.0),
+                                  child: ElevatedButton.icon(
+                                    icon: Icon(
+                                      Icons.arrow_right,
+                                      color: Color.fromRGBO(49, 87, 110, 1.0),
+                                      size: 50.0,
+                                    ),
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Colors.white, // background
+                                      onPrimary: Color.fromRGBO(49, 87, 110, 1.0),// foreground
+                                    ),
+                                    label: new Text("View Details",
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 20.0,
+                                          fontWeight: FontWeight.bold
+                                      ),),
+                                    onPressed: () =>
+                                    {
+                                      Navigator.push(context, MaterialPageRoute(
+                                          builder: (context) => reportdetails()
+                                      ))
+                                    },
+                                  )
+                              )
+
+
+                            ],
+                          )
+                      )
+                    ],
+                  ),
+                ),
+
+
+                //code for yearly
+                new Card(
+                  child: new Column(
+                    children: <Widget>[
+                      new Padding(
+                        padding: new EdgeInsets.all(7.0),
+                       child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                primary: Colors.white, // background
+                  onPrimary: Color.fromRGBO(49, 87, 110, 1.0),// foreground
+                ),
                           child: new Text("Overall Yearly",
                             style: TextStyle(
                                 color: Colors.black,
@@ -250,40 +252,44 @@ class InitState extends State<Dashboard>{
                           padding: new EdgeInsets.all(7.0),
                           child: new Row(
                             children: <Widget>[
-                              new Padding(
-                                  padding: new EdgeInsets.all(7.0),
-                                  child: ElevatedButton.icon(
-                                    icon: Icon(
-                                      Icons.arrow_right,
-                                      color: Color.fromRGBO(49, 87, 110, 1.0),
-                                      size: 50.0,
-                                    ),
-                                    style: ElevatedButton.styleFrom(
-                                      primary: Colors.white, // background
-                                      onPrimary: Color.fromRGBO(49, 87, 110, 1.0),// foreground
-                                      ),
-                                    label: new Text("View Details",
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 20.0,
-                                          fontWeight: FontWeight.bold
-                                      ),
-                                    ),
-                                    onPressed: () => {
-                                      Navigator.push(context, MaterialPageRoute(
-                                          builder: (context) => reportdetails()
-                                      ))
-                                    },
-                                  )
-                              )
+    new Padding(
+    padding: new EdgeInsets.all(7.0),
+    child: ElevatedButton.icon(
+    icon: Icon(
+    Icons.arrow_right,
+    color: Color.fromRGBO(49, 87, 110, 1.0),
+    size: 50.0,
+    ),
+    style: ElevatedButton.styleFrom(
+    primary: Colors.white, // background
+    onPrimary: Color.fromRGBO(49, 87, 110, 1.0),// foreground
+    ),
+    label: new Text("View Details",
+    style: TextStyle(
+    color: Colors.black,
+    fontSize: 20.0,
+    fontWeight: FontWeight.bold
+    ),),
+      onPressed: () =>
+      {
+        Navigator.push(context, MaterialPageRoute(
+            builder: (context) => reportdetails()
+        ))
+      },
+    )
+    )
                             ],
                           )
                       )
                     ],
                   ),
                 ),
+
+
+
+
               ]),
-          ),
+        ),
         ),
 
 

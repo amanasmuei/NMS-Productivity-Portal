@@ -33,7 +33,7 @@ class InitState extends State<SignInPage>{
                       margin: EdgeInsets.only(top: 50),
                       alignment: Alignment.center,
                       child: Text(
-                        "NMS Productivity Portal",
+                        "FSTP Productivity Portal",
                         style: TextStyle(
                           fontSize: 25,
                           fontStyle: FontStyle.italic,
@@ -120,7 +120,7 @@ class InitState extends State<SignInPage>{
                           )],
                         ),
                         child: Text(
-                          "Log In",
+                          "Sign In",
                           style: TextStyle(
                               color: Colors.white
                           ),

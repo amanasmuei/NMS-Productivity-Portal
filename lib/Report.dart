@@ -208,14 +208,13 @@ class _ReportState extends State<Report> {
               label: 'Report',
             ),
           ],
-    currentIndex: _selectedPageIndex,
-    onTap: (index) {
-      setState(() {
-        _selectedPageIndex = index;
-      });
-    },
-
-    ),
+          currentIndex: _selectedPageIndex,
+          onTap: (index) {
+            setState(() {
+              _selectedPageIndex = index;
+            });
+            },
+        ),
     );
 
 

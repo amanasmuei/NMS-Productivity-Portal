@@ -157,24 +157,14 @@ class InitState extends State<Dashboard>{
                     children: <Widget>[
                       new Padding(
                         padding: new EdgeInsets.all(7.0),
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.white, // background
-                            onPrimary: Color.fromRGBO(49, 87, 110, 1.0),// foreground
+                        child: Container(// background
+                            color: Colors.pink[200],// foreground
+                          height: 50.0,
+                          width: 500.0,
+                          child: Text("Overall Monthly",textAlign: TextAlign.left,),
+                          
                           ),
-                        child: new Text("Overall Monthly",
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.bold
-                          ),),
-                          onPressed: () =>
-                          {
-                            Navigator.push(context, MaterialPageRoute(
-                                builder: (context) => Report()
-                            ))
-                          },
-                      ),
+
                       ),
                       new Image.asset("assets/nmslogo.png"),
                       new Padding(

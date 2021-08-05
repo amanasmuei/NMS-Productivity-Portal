@@ -42,7 +42,7 @@ class _IntroScreenState extends State<IntroScreen> {
                 Container(
                   margin: EdgeInsets.only(top: 25),
                   child: Text(
-                    "FSTP Productivity Portal",
+                    "TSFP Productivity Portal",
                     style: TextStyle(
                       color: Colors.blueAccent,
                       fontStyle: FontStyle.italic,

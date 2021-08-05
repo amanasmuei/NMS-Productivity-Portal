@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:nms_productivity_portal/PlaceholderWidget.dart';
-import 'package:nms_productivity_portal/report_details.dart';
+import 'package:nms_productivity_portal/Add_activity.dart';
 import 'package:nms_productivity_portal/signin_page.dart';
 
 
@@ -165,7 +165,8 @@ class InitState extends State<Dashboard>{
                                   color: Colors.black,
                                   fontSize: 30.0,
                                   fontWeight: FontWeight.bold
-                              ),),
+                              ),
+                            ),
 
                           ),
 
@@ -199,7 +200,7 @@ class InitState extends State<Dashboard>{
                                       onPressed: () =>
                                       {
                                         Navigator.push(context, MaterialPageRoute(
-                                            builder: (context) => reportdetails()
+                                            builder: (context) => AddActivity()
                                         ))
                                       },
                                     )
@@ -229,7 +230,9 @@ class InitState extends State<Dashboard>{
                                   color: Colors.black,
                                   fontSize: 30.0,
                                   fontWeight: FontWeight.bold
-                              ),),
+                              ),
+                            ),
+
 
 
                           ),
@@ -262,7 +265,7 @@ class InitState extends State<Dashboard>{
                                       onPressed: () =>
                                       {
                                         Navigator.push(context, MaterialPageRoute(
-                                            builder: (context) => reportdetails()
+                                            builder: (context) => AddActivity()
                                         ))
                                       },
                                     )

@@ -83,7 +83,7 @@ class InitState extends State<Dashboard>{
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.orangeAccent,
-          title: Text("NMS Productivity Portal"),
+          title: Text("TSFP Productivity Portal"),
           actions: [
             PopupMenuButton<String>(
               icon: Icon(Icons.account_circle),

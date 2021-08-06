@@ -76,7 +76,7 @@ class _AddActivityState extends State<AddActivity> {
          child: new Column(
              children: <Widget>[
      Container(// background
-    color: Colors.blue,
+    color: Colors.blue[200],
      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -85,7 +85,7 @@ class _AddActivityState extends State<AddActivity> {
             child: TextField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                hintText: 'Enter a search term',
+                hintText: 'Enter Activities/Operational Supports',
               ),
             ),
           ),
@@ -94,7 +94,7 @@ class _AddActivityState extends State<AddActivity> {
             child: TextFormField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: 'Enter your username',
+                labelText: 'Enter Project Name',
               ),
             ),
           ),
@@ -103,7 +103,7 @@ class _AddActivityState extends State<AddActivity> {
             child: TextFormField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: 'Enter your username',
+                labelText: 'Enter Users/Customers',
               ),
             ),
           ),
@@ -112,7 +112,7 @@ class _AddActivityState extends State<AddActivity> {
             child: TextFormField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: 'Enter your username',
+                labelText: 'Enter Man Days',
               ),
             ),
           ),
@@ -121,8 +121,29 @@ class _AddActivityState extends State<AddActivity> {
             child: TextFormField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                focusColor: Colors.white,
-                labelText: 'Enter your username',
+                labelText: 'Description',
+              ),
+            ),
+          ),
+          GestureDetector(
+            onTap: () => {
+
+              /*submit*/
+            },
+            child: Container(
+              margin: EdgeInsets.only(left: 50, right: 50, top: 50),
+              padding: EdgeInsets.only(left: 30, right: 30),
+              alignment: Alignment.center,
+              height: 54,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.blue[400],
+              ),
+              child: Text(
+                "Submit",
+                style: TextStyle(
+                    color: Colors.white
+                ),
               ),
             ),
           ),

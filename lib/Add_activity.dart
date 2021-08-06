@@ -57,104 +57,101 @@ class _AddActivityState extends State<AddActivity> {
       ),
       body:
           SingleChildScrollView(
-          child: Container(
-          padding: new EdgeInsets.only(left: 16.0, bottom: 0.0, right: 16.0,),
-          child: new Column(
-          mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          textDirection: TextDirection.rtl,
-          children: [
-          Text(
-          'Compose New',
-          style: TextStyle(
-          color: Colors.black,
-          fontSize: 30.0,
-          fontWeight: FontWeight.bold
-          ),
-          ),
-     Card(
-         child: new Column(
-             children: <Widget>[
-     Container(// background
-    color: Colors.blue[200],
-     child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-            child: TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'Enter Activities/Operational Supports',
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-            child: TextFormField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Enter Project Name',
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-            child: TextFormField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Enter Users/Customers',
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-            child: TextFormField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Enter Man Days',
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-            child: TextFormField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Description',
-              ),
-            ),
-          ),
-          GestureDetector(
-            onTap: () => {
-
-              /*submit*/
-            },
             child: Container(
-              margin: EdgeInsets.only(left: 50, right: 50, top: 50),
-              padding: EdgeInsets.only(left: 30, right: 30),
-              alignment: Alignment.center,
-              height: 54,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.blue[400],
-              ),
-              child: Text(
-                "Submit",
-                style: TextStyle(
-                    color: Colors.white
-                ),
-              ),
+              padding: new EdgeInsets.only(left: 16.0, bottom: 0.0, right: 16.0,),
+              child: new Column(
+                  mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  textDirection: TextDirection.rtl,
+                  children: [
+                    Text(
+                      'Compose New',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 30.0,
+                          fontWeight: FontWeight.bold
+                      ),
+                    ),
+                    Card(
+                      child: new Column(
+                          children: <Widget>[
+                            Container(// background
+                              color: Colors.blue[200],
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                                    child: TextField(
+                                      decoration: InputDecoration(
+                                        border: OutlineInputBorder(),
+                                        hintText: 'Enter Activities/Operational Supports',
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                                    child: TextFormField(
+                                      decoration: InputDecoration(
+                                        border: OutlineInputBorder(),
+                                        labelText: 'Enter Project Name',
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                                    child: TextFormField(
+                                      decoration: InputDecoration(
+                                        border: OutlineInputBorder(),
+                                        labelText: 'Enter Users/Customers',
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                                    child: TextFormField(
+                                      decoration: InputDecoration(
+                                        border: OutlineInputBorder(),
+                                        labelText: 'Enter Man Days',
+                                      ),
+                                    ),
+                                  ), Padding(
+                                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                                    child: TextFormField(
+                                      decoration: InputDecoration(
+                                        border: OutlineInputBorder(),
+                                        labelText: 'Description',
+                                      ),
+                                    ),
+                                  ),
+                                  GestureDetector(
+                                    onTap: () => {
+                                      /*submit*/
+                                    },
+                                    child: Container(
+                                      margin: EdgeInsets.only(left: 50, right: 50, top: 50),
+                                      padding: EdgeInsets.only(left: 30, right: 30),
+                                      alignment: Alignment.center,
+                                      height: 54,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10),
+                                        color: Colors.blue[400],
+                                      ),
+                                      child: Text(
+                                        "Submit",
+                                        style: TextStyle(
+                                            color: Colors.white
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ]),
+                    ),
+                  ]),
             ),
-          ),
-        ],
-      ),
-     )
-     ]),
-          ),
-          ]),
-
-    ),
           ),
 
 
@@ -200,7 +197,6 @@ class _AddActivityState extends State<AddActivity> {
 
 
 
-
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
         selectedFontSize: 20,
@@ -228,14 +224,8 @@ class _AddActivityState extends State<AddActivity> {
             _selectedPageIndex = index;
           });
         },
-
-
-
-
       ),
     );
-
-
   }
 }
 

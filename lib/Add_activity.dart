@@ -32,7 +32,7 @@ class _AddActivityState extends State<AddActivity> {
       appBar: AppBar(
         title: Text("TSFP Productivity Portal"),
         elevation: .1,
-        backgroundColor: Colors.orangeAccent,
+        backgroundColor: Color.fromRGBO(49, 87, 110, 1.0),
         actions: [
           PopupMenuButton<String>(
             icon: Icon(Icons.account_circle),
@@ -56,8 +56,8 @@ class _AddActivityState extends State<AddActivity> {
         ],
       ),
       body:
-
-          Container(
+          SingleChildScrollView(
+          child: Container(
           padding: new EdgeInsets.only(left: 16.0, bottom: 0.0, right: 16.0,),
           child: new Column(
           mainAxisSize: MainAxisSize.max,
@@ -72,8 +72,7 @@ class _AddActivityState extends State<AddActivity> {
           fontWeight: FontWeight.bold
           ),
           ),
-    SingleChildScrollView(
-    child: Card(
+     Card(
          child: new Column(
              children: <Widget>[
      Container(// background
@@ -153,11 +152,10 @@ class _AddActivityState extends State<AddActivity> {
      )
      ]),
           ),
-          ),
           ]),
 
     ),
-
+          ),
 
 
 

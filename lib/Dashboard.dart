@@ -84,7 +84,7 @@ class InitState extends State<Dashboard>{
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.orangeAccent,
-          title: Text("NMS Productivity Portal"),
+          title: Text("TSFP Productivity Portal"),
           actions: [
             PopupMenuButton<String>(
               icon: Icon(Icons.account_circle),
@@ -172,7 +172,7 @@ class InitState extends State<Dashboard>{
                           ),
 
                         ),
-                        new Image.asset("assets/nmslogo.png"),
+
                         new Padding(
                             padding: new EdgeInsets.all(7.0),
                             child: new Row(
@@ -234,7 +234,7 @@ class InitState extends State<Dashboard>{
                           ),
 
                         ),
-                        new Image.asset("assets/nmslogo.png"),
+
                         new Padding(
                             padding: new EdgeInsets.all(7.0),
                             child: new Row(
@@ -272,12 +272,32 @@ class InitState extends State<Dashboard>{
                     ),
                   ),
 
+                  Column(
+                      mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      textDirection: TextDirection.rtl,
+                      children: [
+                        Text(
+                          'Summary',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 27.0,
+                              fontWeight: FontWeight.bold
+                          ),
+                        ),
+                      ]
+                  ),
+
+
 
 
 
                 ]),
+
           ),
+
         ),
+
 
 
 

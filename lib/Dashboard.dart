@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:nms_productivity_portal/PlaceholderWidget.dart';
 import 'package:nms_productivity_portal/Add_activity.dart';
+import 'package:nms_productivity_portal/PlaceholderWidget.dart';
+
 import 'package:nms_productivity_portal/signin_page.dart';
 
 
@@ -165,16 +166,13 @@ class InitState extends State<Dashboard>{
                                   color: Colors.black,
                                   fontSize: 30.0,
                                   fontWeight: FontWeight.bold
-                              ),
-                            ),
+                              ),),
+
 
                           ),
 
                         ),
-
-                        //code for productivity and mandays here
-
-
+                        new Image.asset("assets/nmslogo.png"),
                         new Padding(
                             padding: new EdgeInsets.all(7.0),
                             child: new Row(
@@ -230,16 +228,13 @@ class InitState extends State<Dashboard>{
                                   color: Colors.black,
                                   fontSize: 30.0,
                                   fontWeight: FontWeight.bold
-                              ),
-                            ),
-
+                              ),),
 
 
                           ),
 
                         ),
-                        //code for productivity and mandays here
-
+                        new Image.asset("assets/nmslogo.png"),
                         new Padding(
                             padding: new EdgeInsets.all(7.0),
                             child: new Row(
@@ -276,23 +271,6 @@ class InitState extends State<Dashboard>{
                       ],
                     ),
                   ),
-
-
-            Column(
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                textDirection: TextDirection.rtl,
-                children: [
-                  Text(
-                    'Summary',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 27.0,
-                        fontWeight: FontWeight.bold
-                    ),
-                  ),
-                ]
-            ),
 
 
 

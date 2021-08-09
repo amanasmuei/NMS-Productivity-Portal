@@ -1,3 +1,4 @@
+import 'package:nms_productivity_portal/Add_activity.dart';
 import 'package:nms_productivity_portal/Dashboard.dart';
 import 'package:nms_productivity_portal/Report.dart';
 import 'package:flutter/cupertino.dart';
@@ -8,7 +9,7 @@ int _selectedPageIndex = 0;
 
 var _pages = [
   Report(),
-  /*ProfilePage(),*/
+  AddActivity(),
 ];
 class Report extends StatefulWidget {
   @override

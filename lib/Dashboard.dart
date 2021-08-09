@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:nms_productivity_portal/Add_activity.dart';
+import 'package:nms_productivity_portal/Dashboard_details.dart';
 import 'package:nms_productivity_portal/PlaceholderWidget.dart';
 import 'package:nms_productivity_portal/Report.dart';
 
@@ -210,10 +211,10 @@ class InitState extends State<Dashboard>{
                                     icon: Icon(Icons.receipt),
                                     onSelected: (String result) {
                                       switch (result) {
-                                        case 'report':
+                                        case 'details':
                                           Navigator.push(
                                             context,
-                                            MaterialPageRoute(builder: (context) => Report()),
+                                            MaterialPageRoute(builder: (context) => DashboardDetails()),
                                           );
                                           break;
                                         default:
@@ -221,8 +222,8 @@ class InitState extends State<Dashboard>{
                                     },
                                     itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
                                       const PopupMenuItem<String>(
-                                        value: 'report',
-                                        child: Text('Report'),
+                                        value: 'details',
+                                        child: Text('Details'),
                                       ),
                                     ],
                                   ),

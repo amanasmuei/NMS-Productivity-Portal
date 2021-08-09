@@ -8,7 +8,7 @@ int _selectedPageIndex = 0;
 
 var _pages = [
   Report(),
-  /*ProfilePage(),*/
+  AddActivity(),
 ];
 class AddActivity extends StatefulWidget {
   @override

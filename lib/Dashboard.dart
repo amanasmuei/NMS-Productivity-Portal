@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:nms_productivity_portal/Add_activity.dart';
 import 'package:nms_productivity_portal/PlaceholderWidget.dart';
+import 'package:nms_productivity_portal/Report.dart';
 
 import 'package:nms_productivity_portal/signin_page.dart';
 
@@ -12,41 +13,6 @@ class Dashboard extends StatefulWidget{
 }
 
 class InitState extends State<Dashboard>{
-  _getSizes() {
-  }
-
-  _getPositions(){
-  }
-  /* DateTime selectedDate = DateTime.now();
-
-  /// This decides which day will be enabled
-  /// This will be called every time while displaying day in calender.
-  bool _decideWhichDayToEnable(DateTime day) {
-    if ((day.isAfter(DateTime.now().subtract(Duration(days: 1))) &&
-        day.isBefore(DateTime.now().add(Duration(days: 10))))) {
-      return true;
-    }
-    return false;
-  }
-
-  _selectDate(BuildContext context) {
-    final ThemeData theme = Theme.of(context);
-    assert(theme.platform != null);
-    switch (theme.platform) {
-      case TargetPlatform.android:
-
-      case TargetPlatform.fuchsia:
-      case TargetPlatform.linux:
-      case TargetPlatform.windows:
-        return buildMaterialDatePicker(context);
-      case TargetPlatform.iOS:
-      case TargetPlatform.macOS:
-        return buildCupertinoDatePicker(context);
-    }
-  }*/
-
-  /*String dropdownvalue = '1';
-  var items =  ['1','2','3','4','5','6','7','8','9','10','11','12'];*/
 
 
 
@@ -118,36 +84,107 @@ class InitState extends State<Dashboard>{
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 textDirection: TextDirection.rtl,
-                children: [
-                  Text(
-                    'Dashboard 2021-07',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 30.0,
-                        fontWeight: FontWeight.bold
-                    ),
-                  ),
-                  /*Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    DropdownButton(
-                      value: dropdownvalue,
-                      icon: Icon(Icons.keyboard_arrow_down),
-                      items:items.map((String items) {
-                        return DropdownMenuItem(
-                            value: items,
-                            child: Text(items)
-                        );
-                      }
-                      ).toList(),
-                      onChanged: (String newValue){
-                        setState(() {
-                          dropdownvalue = newValue;
-                        });
+                  children: <Widget>[
+                    Text("Dashboard 2021-07",textAlign: TextAlign.start,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 30.0,
+                          fontWeight: FontWeight.bold
+                      ),),
+                    PopupMenuButton<String>(
+                      icon: Icon(Icons.filter_alt),
+                      onSelected: (String result) {
+                        switch (result) {
+                          case 'January':
+                            print('filter 1 clicked');
+                            break;
+                          case 'February':
+                            print('filter 2 clicked');
+                            break;
+                          case 'March':
+                            print('Clear filters');
+                            break;
+                          case 'April':
+                            print('filter 2 clicked');
+                            break;
+                          case 'May':
+                            print('filter 2 clicked');
+                            break;
+                          case 'June':
+                            print('filter 2 clicked');
+                            break;
+                          case 'July':
+                            print('filter 2 clicked');
+                            break;
+                          case 'August':
+                            print('filter 2 clicked');
+                            break;
+                          case 'September':
+                            print('filter 2 clicked');
+                            break;
+                          case 'October':
+                            print('filter 2 clicked');
+                            break;
+                          case 'November':
+                            print('filter 2 clicked');
+                            break;
+                          case 'December':
+                            print('filter 2 clicked');
+                            break;
+                          default:
+                        }
                       },
+                      itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                        const PopupMenuItem<String>(
+                          value: 'January',
+                          child: Text('January'),
+                        ),
+                        const PopupMenuItem<String>(
+                          value: 'filter2',
+                          child: Text('February'),
+                        ),
+                        const PopupMenuItem<String>(
+                          value: 'filter2',
+                          child: Text('March'),
+                        ),
+                        const PopupMenuItem<String>(
+                          value: 'filter2',
+                          child: Text('April'),
+                        ),
+                        const PopupMenuItem<String>(
+                          value: 'filter2',
+                          child: Text('May'),
+                        ),
+                        const PopupMenuItem<String>(
+                          value: 'filter2',
+                          child: Text('June'),
+                        ),
+                        const PopupMenuItem<String>(
+                          value: 'filter2',
+                          child: Text('July'),
+                        ),
+                        const PopupMenuItem<String>(
+                          value: 'filter2',
+                          child: Text('August'),
+                        ),
+                        const PopupMenuItem<String>(
+                          value: 'filter2',
+                          child: Text('September'),
+                        ),
+                        const PopupMenuItem<String>(
+                          value: 'filter2',
+                          child: Text('October'),
+                        ),
+                        const PopupMenuItem<String>(
+                          value: 'filter2',
+                          child: Text('November'),
+                        ),
+                        const PopupMenuItem<String>(
+                          value: 'clearFilters',
+                          child: Text('December'),
+                        ),
+                      ],
                     ),
-                  ],
-                ),*/
 
 
 
@@ -161,17 +198,43 @@ class InitState extends State<Dashboard>{
                             color: Colors.pink[200],// foreground
                             height: 50.0,
                             width: 500.0,
-                            child: Text("Overall Monthly",textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 30.0,
-                                  fontWeight: FontWeight.bold
-                              ),),
+                              child: Row(
+                                children: <Widget>[
+                                Text("Overall Monthly",textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 30.0,
+                                    fontWeight: FontWeight.bold
+                                ),),
+                                  PopupMenuButton<String>(
+                                    icon: Icon(Icons.receipt),
+                                    onSelected: (String result) {
+                                      switch (result) {
+                                        case 'report':
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(builder: (context) => Report()),
+                                          );
+                                          break;
+                                        default:
+                                      }
+                                    },
+                                    itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                                      const PopupMenuItem<String>(
+                                        value: 'report',
+                                        child: Text('Report'),
+                                      ),
+                                    ],
+                                  ),
+
+                                    ],
+                                ),
+                              ),
+                            ),
 
 
-                          ),
 
-                        ),
+
 
                         new Padding(
                             padding: new EdgeInsets.all(7.0),
@@ -207,10 +270,10 @@ class InitState extends State<Dashboard>{
 
                               ],
                             )
-                        )
-                      ],
-                    ),
+                        ),
+                      ]),
                   ),
+
 
 
                   //code for yearly
@@ -223,16 +286,38 @@ class InitState extends State<Dashboard>{
                             color: Colors.lightGreen,// foreground
                             height: 50.0,
                             width: 500.0,
-                            child: Text("Overall Yearly",textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 30.0,
-                                  fontWeight: FontWeight.bold
-                              ),),
+                            child: Row(
+                              children: <Widget>[
+                                Text("Overall Yearly",textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 30.0,
+                                      fontWeight: FontWeight.bold
+                                  ),),
+                                PopupMenuButton<String>(
+                                  icon: Icon(Icons.receipt),
+                                  onSelected: (String result) {
+                                    switch (result) {
+                                      case 'report':
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(builder: (context) => Report()),
+                                        );
+                                        break;
+                                      default:
+                                    }
+                                  },
+                                  itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                                    const PopupMenuItem<String>(
+                                      value: 'report',
+                                      child: Text('Report'),
+                                    ),
+                                  ],
+                                ),
 
-
+                              ],
+                            ),
                           ),
-
                         ),
 
                         new Padding(

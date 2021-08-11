@@ -1,3 +1,4 @@
+import 'package:nms_productivity_portal/Activity_detail.dart';
 import 'package:nms_productivity_portal/Add_activity.dart';
 import 'package:nms_productivity_portal/Dashboard.dart';
 import 'package:nms_productivity_portal/Report.dart';
@@ -89,10 +90,10 @@ class _DashboardDetailsState extends State<DashboardDetails> {
                                     icon: Icon(Icons.receipt),
                                     onSelected: (String result) {
                                       switch (result) {
-                                        case 'report':
+                                        case 'duplicate':
                                           Navigator.push(
                                             context,
-                                            MaterialPageRoute(builder: (context) => Report()),
+                                            MaterialPageRoute(builder: (context) => ActivityDetails()),
                                           );
                                           break;
                                         default:
@@ -100,8 +101,8 @@ class _DashboardDetailsState extends State<DashboardDetails> {
                                     },
                                     itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
                                       const PopupMenuItem<String>(
-                                        value: 'report',
-                                        child: Text('Report'),
+                                        value: 'duplicate',
+                                        child: Text('Duplicate'),
                                       ),
                                     ],
                                   ),
@@ -141,7 +142,7 @@ class _DashboardDetailsState extends State<DashboardDetails> {
                                         case 'report':
                                           Navigator.push(
                                             context,
-                                            MaterialPageRoute(builder: (context) => Report()),
+                                            MaterialPageRoute(builder: (context) => ActivityDetails()),
                                           );
                                           break;
                                         default:
@@ -189,10 +190,10 @@ class _DashboardDetailsState extends State<DashboardDetails> {
                                     icon: Icon(Icons.receipt),
                                     onSelected: (String result) {
                                       switch (result) {
-                                        case 'report':
+                                        case 'duplicate':
                                           Navigator.push(
                                             context,
-                                            MaterialPageRoute(builder: (context) => Report()),
+                                            MaterialPageRoute(builder: (context) => ActivityDetails()),
                                           );
                                           break;
                                         default:
@@ -200,8 +201,8 @@ class _DashboardDetailsState extends State<DashboardDetails> {
                                     },
                                     itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
                                       const PopupMenuItem<String>(
-                                        value: 'report',
-                                        child: Text('Report'),
+                                        value: 'duplicate',
+                                        child: Text('Duplicate'),
                                       ),
                                     ],
                                   ),
@@ -239,10 +240,10 @@ class _DashboardDetailsState extends State<DashboardDetails> {
                                     icon: Icon(Icons.receipt),
                                     onSelected: (String result) {
                                       switch (result) {
-                                        case 'report':
+                                        case 'duplicate':
                                           Navigator.push(
                                             context,
-                                            MaterialPageRoute(builder: (context) => Report()),
+                                            MaterialPageRoute(builder: (context) => ActivityDetails()),
                                           );
                                           break;
                                         default:
@@ -250,8 +251,8 @@ class _DashboardDetailsState extends State<DashboardDetails> {
                                     },
                                     itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
                                       const PopupMenuItem<String>(
-                                        value: 'report',
-                                        child: Text('Report'),
+                                        value: 'duplicate',
+                                        child: Text('Duplicate'),
                                       ),
                                     ],
                                   ),

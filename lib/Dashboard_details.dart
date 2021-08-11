@@ -53,7 +53,7 @@ class _DashboardDetailsState extends State<DashboardDetails> {
         body:    /*_children[_currentIndex],*/
         SingleChildScrollView(
           child: Container(
-            padding: new EdgeInsets.only(left: 16.0, bottom: 0.0, right: 16.0,),
+            padding: new EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0, bottom: 30.0),
             child: new Column(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -74,7 +74,7 @@ class _DashboardDetailsState extends State<DashboardDetails> {
                     child: new Column(
                         children: <Widget>[
                           new Padding(
-                            padding: new EdgeInsets.all(7.0),
+                            padding: new EdgeInsets.only(left: 15.0, bottom: 15.0, top: 15.0),
                             child: Container(// background
                               height: 50.0,
                               width: 500.0,
@@ -87,7 +87,8 @@ class _DashboardDetailsState extends State<DashboardDetails> {
                                         fontWeight: FontWeight.bold
                                     ),),
                                   PopupMenuButton<String>(
-                                    icon: Icon(Icons.receipt),
+                                      padding: EdgeInsets.only(left: 250),
+                                      icon: Icon(Icons.receipt),
                                     onSelected: (String result) {
                                       switch (result) {
                                         case 'duplicate':
@@ -110,9 +111,8 @@ class _DashboardDetailsState extends State<DashboardDetails> {
                               ),
                             ),
                           ),
-                          new Image.asset("assets/nmslogo.png"),
                           new Padding(
-                            padding: new EdgeInsets.all(7.0),
+                            padding: new EdgeInsets.all(50.0),
                           ),
                         ]),
                   ),

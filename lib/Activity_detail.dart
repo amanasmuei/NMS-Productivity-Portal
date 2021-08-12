@@ -85,26 +85,6 @@ class _ActivityDetailsState extends State<ActivityDetails> {
                                         fontSize: 30.0,
                                         fontWeight: FontWeight.bold
                                     ),),
-                                  PopupMenuButton<String>(
-                                    icon: Icon(Icons.receipt),
-                                    onSelected: (String result) {
-                                      switch (result) {
-                                        case 'duplicate':
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(builder: (context) => AddActivity()),
-                                          );
-                                          break;
-                                        default:
-                                      }
-                                    },
-                                    itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-                                      const PopupMenuItem<String>(
-                                        value: 'duplicate',
-                                        child: Text('Duplicate'),
-                                      ),
-                                    ],
-                                  ),
                                 ],
                               ),
                             ),

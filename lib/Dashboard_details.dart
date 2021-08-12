@@ -87,7 +87,7 @@ class _DashboardDetailsState extends State<DashboardDetails> {
                                         fontWeight: FontWeight.bold
                                     ),),
                                   PopupMenuButton<String>(
-                                    icon: Icon(Icons.receipt),
+                                    icon: Icon(Icons.copy),
                                     onSelected: (String result) {
                                       switch (result) {
                                         case 'duplicate':
@@ -136,7 +136,7 @@ class _DashboardDetailsState extends State<DashboardDetails> {
                                         fontWeight: FontWeight.bold
                                     ),),
                                   PopupMenuButton<String>(
-                                    icon: Icon(Icons.receipt),
+                                    icon: Icon(Icons.copy),
                                     onSelected: (String result) {
                                       switch (result) {
                                         case 'report':
@@ -187,7 +187,7 @@ class _DashboardDetailsState extends State<DashboardDetails> {
                                         fontWeight: FontWeight.bold
                                     ),),
                                   PopupMenuButton<String>(
-                                    icon: Icon(Icons.receipt),
+                                    icon: Icon(Icons.copy),
                                     onSelected: (String result) {
                                       switch (result) {
                                         case 'duplicate':
@@ -237,7 +237,7 @@ class _DashboardDetailsState extends State<DashboardDetails> {
                                         fontWeight: FontWeight.bold
                                     ),),
                                   PopupMenuButton<String>(
-                                    icon: Icon(Icons.receipt),
+                                    icon: Icon(Icons.copy),
                                     onSelected: (String result) {
                                       switch (result) {
                                         case 'duplicate':

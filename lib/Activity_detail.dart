@@ -85,6 +85,7 @@ class _ActivityDetailsState extends State<ActivityDetails> {
                                         fontSize: 30.0,
                                         fontWeight: FontWeight.bold
                                     ),),
+
                                 ],
                               ),
                             ),

@@ -53,7 +53,7 @@ class _DashboardDetailsState extends State<DashboardDetails> {
         body:    /*_children[_currentIndex],*/
         SingleChildScrollView(
           child: Container(
-            padding: new EdgeInsets.only(left: 16.0, bottom: 0.0, right: 16.0,),
+            padding: new EdgeInsets.only(left: 16.0, bottom: 16.0, right: 16.0,),
             child: new Column(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -87,6 +87,7 @@ class _DashboardDetailsState extends State<DashboardDetails> {
                                         fontWeight: FontWeight.bold
                                     ),),
                                   PopupMenuButton<String>(
+                                    padding: EdgeInsets.only(left: 250),
                                     icon: Icon(Icons.receipt),
                                     onSelected: (String result) {
                                       switch (result) {
@@ -136,6 +137,7 @@ class _DashboardDetailsState extends State<DashboardDetails> {
                                         fontWeight: FontWeight.bold
                                     ),),
                                   PopupMenuButton<String>(
+                                    padding: EdgeInsets.only(left: 250),
                                     icon: Icon(Icons.receipt),
                                     onSelected: (String result) {
                                       switch (result) {
@@ -187,6 +189,7 @@ class _DashboardDetailsState extends State<DashboardDetails> {
                                         fontWeight: FontWeight.bold
                                     ),),
                                   PopupMenuButton<String>(
+                                    padding: EdgeInsets.only(left: 250),
                                     icon: Icon(Icons.receipt),
                                     onSelected: (String result) {
                                       switch (result) {
@@ -237,6 +240,7 @@ class _DashboardDetailsState extends State<DashboardDetails> {
                                         fontWeight: FontWeight.bold
                                     ),),
                                   PopupMenuButton<String>(
+                                    padding: EdgeInsets.only(left: 250),
                                     icon: Icon(Icons.receipt),
                                     onSelected: (String result) {
                                       switch (result) {

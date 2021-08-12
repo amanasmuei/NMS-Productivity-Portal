@@ -15,6 +15,18 @@ class Dashboard extends StatefulWidget{
 }
 
 class InitState extends State<Dashboard>{
+  DateTime currentDate = DateTime.now();
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime pickedDate = await showDatePicker(
+        context: context,
+        initialDate: currentDate,
+        firstDate: DateTime(2015),
+        lastDate: DateTime(2050));
+    if (pickedDate != null && pickedDate != currentDate)
+      setState(() {
+        currentDate = pickedDate;
+      });
+  }
 
 
 
@@ -83,7 +95,7 @@ class InitState extends State<Dashboard>{
             padding: new EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0),
             alignment: Alignment.topCenter,
             child: new Column(
-                mainAxisSize: MainAxisSize.max,
+                mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 textDirection: TextDirection.rtl,
                   children: <Widget>[
@@ -95,102 +107,21 @@ class InitState extends State<Dashboard>{
                           fontWeight: FontWeight.bold
                       ),
                     ),
-                    Container(
-                      alignment: Alignment.topRight,
-                      child: PopupMenuButton<String>(
-                        icon: Icon(Icons.filter_alt),
-                        onSelected: (String result) {
-                          switch (result) {
-                            case 'January':
-                              print('filter 1 clicked');
-                              break;
-                            case 'February':
-                              print('filter 2 clicked');
-                              break;
-                            case 'March':
-                              print('Clear filters');
-                              break;
-                            case 'April':
-                              print('filter 2 clicked');
-                              break;
-                            case 'May':
-                              print('filter 2 clicked');
-                              break;
-                            case 'June':
-                              print('filter 2 clicked');
-                              break;
-                            case 'July':
-                              print('filter 2 clicked');
-                              break;
-                            case 'August':
-                              print('filter 2 clicked');
-                              break;
-                            case 'September':
-                              print('filter 2 clicked');
-                              break;
-                            case 'October':
-                              print('filter 2 clicked');
-                              break;
-                            case 'November':
-                              print('filter 2 clicked');
-                              break;
-                            case 'December':
-                              print('filter 2 clicked');
-                              break;
-                            default:
-                          }
-                        },
-                        itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-                          const PopupMenuItem<String>(
-                            value: 'January',
-                            child: Text('January'),
-                          ),
-                          const PopupMenuItem<String>(
-                            value: 'filter2',
-                            child: Text('February'),
-                          ),
-                          const PopupMenuItem<String>(
-                            value: 'filter2',
-                            child: Text('March'),
-                          ),
-                          const PopupMenuItem<String>(
-                            value: 'filter2',
-                            child: Text('April'),
-                          ),
-                          const PopupMenuItem<String>(
-                            value: 'filter2',
-                            child: Text('May'),
-                          ),
-                          const PopupMenuItem<String>(
-                            value: 'filter2',
-                            child: Text('June'),
-                          ),
-                          const PopupMenuItem<String>(
-                            value: 'filter2',
-                            child: Text('July'),
-                          ),
-                          const PopupMenuItem<String>(
-                            value: 'filter2',
-                            child: Text('August'),
-                          ),
-                          const PopupMenuItem<String>(
-                            value: 'filter2',
-                            child: Text('September'),
-                          ),
-                          const PopupMenuItem<String>(
-                            value: 'filter2',
-                            child: Text('October'),
-                          ),
-                          const PopupMenuItem<String>(
-                            value: 'filter2',
-                            child: Text('November'),
-                          ),
-                          const PopupMenuItem<String>(
-                            value: 'clearFilters',
-                            child: Text('December'),
-                          ),
-                        ],
-                      ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        Text(currentDate.toString(),
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 30.0,
+                              fontWeight: FontWeight.bold
+                          ),),
+                        IconButton(
+                          icon: Icon(Icons.filter_alt),
+                          onPressed: () => _selectDate(context),
+                        ),
+                      ],
                     ),
 
 
@@ -242,6 +173,13 @@ class InitState extends State<Dashboard>{
                                 ),
                               ),
                             ),
+                        Text("Title 1",
+                          textAlign: TextAlign.start,
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 30.0,
+                              fontWeight: FontWeight.bold
+                          ),),
 
                         new Padding(
                             padding: new EdgeInsets.all(7.0),
@@ -326,6 +264,13 @@ class InitState extends State<Dashboard>{
                             ),
                           ),
                         ),
+                        Text("Title 1",
+                          textAlign: TextAlign.start,
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 30.0,
+                              fontWeight: FontWeight.bold
+                          ),),
 
                         new Padding(
                             padding: new EdgeInsets.all(7.0),
@@ -378,9 +323,13 @@ class InitState extends State<Dashboard>{
                                 fontWeight: FontWeight.bold
                             ),
                           ),
-                        ]
+                        ],
+
                     ),
-                  )
+                  ),
+
+
+
 
 
 

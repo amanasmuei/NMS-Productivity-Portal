@@ -5,8 +5,8 @@ import 'package:nms_productivity_portal/Add_activity.dart';
 import 'package:nms_productivity_portal/Dashboard_details.dart';
 import 'package:nms_productivity_portal/PlaceholderWidget.dart';
 import 'package:nms_productivity_portal/Report.dart';
-
 import 'package:nms_productivity_portal/signin_page.dart';
+import 'package:nms_productivity_portal/bottom_nav_bar.dart';
 
 
 class Dashboard extends StatefulWidget{
@@ -36,60 +36,10 @@ class InitState extends State<Dashboard>{
     return initWidget();
   }
 
-  void _onTabTapped(int index){
-    setState(() {
-      _currentIndex = index;
-    });
-  }
-  int _currentIndex = 0;
-  final List<Widget> _children = <Widget>[
-    Icon(
-      Icons.dashboard_outlined,
-      size: 150,
-    ),
-    Icon(
-      Icons.add,
-      size: 150,
-    ),
-    Icon(
-      Icons.receipt,
-      size: 150,
-    ),
-    /* PlaceholderWidget(Colors.purpleAccent),
-    PlaceholderWidget(Colors.blueAccent),*/
-  ];
-
 
   Widget initWidget() {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.orangeAccent,
-          title: Text("TSFP Productivity Portal"),
-          actions: [
-            PopupMenuButton<String>(
-              icon: Icon(Icons.account_circle),
-              onSelected: (String result) {
-                switch (result) {
-                  case 'Logout':
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SignInPage()),
-                    );
-                    break;
-                }
-              },
-              itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-                const PopupMenuItem<String>(
-                  value: 'Logout',
-                  child: Text('Logout'),
-                ),
-              ],
-            ),
-          ],
-        ),
-
-
-        body:    /*_children[_currentIndex],*/
+      body:
         SingleChildScrollView(
           child: Container(
             padding: new EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0),
@@ -99,7 +49,7 @@ class InitState extends State<Dashboard>{
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 textDirection: TextDirection.rtl,
                   children: <Widget>[
-                    Text("Dashboard 2021-07",
+                    Text("Dashboard",
                       textAlign: TextAlign.start,
                       style: TextStyle(
                           color: Colors.black,
@@ -329,52 +279,12 @@ class InitState extends State<Dashboard>{
                   ),
 
 
-
-
-
-
-
-
-
-
                 ]),
 
           ),
 
         ),
 
-
-
-
-
-
-
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _currentIndex,
-          onTap: _onTabTapped,
-          backgroundColor: Colors.white,
-          selectedFontSize: 20,
-          unselectedFontSize: 15,
-          selectedIconTheme: IconThemeData(color: Colors.deepOrange),
-          selectedItemColor: Colors.deepOrange,
-          selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
-
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.dashboard_outlined),
-              label: 'Dashboard',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.add),
-              label: 'Add Activity',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.receipt),
-              label: 'Report',
-            ),
-          ],
-
-        )
     );
 
   }

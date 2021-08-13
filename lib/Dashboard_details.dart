@@ -50,16 +50,18 @@ class _DashboardDetailsState extends State<DashboardDetails> {
 
 
 
-        body:    /*_children[_currentIndex],*/
+        body:
         SingleChildScrollView(
           child: Container(
-            padding: new EdgeInsets.only(left: 16.0, bottom: 16.0, right: 16.0,),
+            padding: new EdgeInsets.only(left: 16.0, bottom: 16.0, right: 16.0,top: 16.0),
+
             child: new Column(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 textDirection: TextDirection.rtl,
                 children: <Widget>[
-                  Text("Activity 2021-07",textAlign: TextAlign.start,
+                  Text("Activity 2021-07",
+                    textAlign: TextAlign.start,
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 30.0,
@@ -74,18 +76,20 @@ class _DashboardDetailsState extends State<DashboardDetails> {
                     child: new Column(
                         children: <Widget>[
                           new Padding(
-                            padding: new EdgeInsets.all(7.0),
+                            padding: new EdgeInsets.only(left: 16.0, bottom: 16.0, right: 16.0,top: 16.0),
                             child: Container(// background
                               height: 50.0,
                               width: 500.0,
                               child: Row(
                                 children: <Widget>[
-                                  Text("Title 1",textAlign: TextAlign.center,
+                                  Text("Title 1",
+                                    textAlign: TextAlign.center,
                                     style: TextStyle(
                                         color: Colors.black,
                                         fontSize: 30.0,
                                         fontWeight: FontWeight.bold
-                                    ),),
+                                    ),
+                                  ),
                                   PopupMenuButton<String>(
                                     padding: EdgeInsets.only(left: 250),
                                     icon: Icon(Icons.receipt),
@@ -111,11 +115,8 @@ class _DashboardDetailsState extends State<DashboardDetails> {
                               ),
                             ),
                           ),
-                          new Image.asset("assets/nmslogo.png"),
-                          new Padding(
-                            padding: new EdgeInsets.all(7.0),
-                          ),
-                        ]),
+                        ]
+                    ),
                   ),
 
                   //code for TITLE 1
@@ -162,11 +163,10 @@ class _DashboardDetailsState extends State<DashboardDetails> {
                             ),
                           ),
                           new Image.asset("assets/nmslogo.png"),
-            new Padding(
-                padding: new EdgeInsets.all(7.0),
-            ),
+                          new Padding(
+                            padding: new EdgeInsets.all(7.0),
+                          ),
                         ]),
-
                   ),
 
 
@@ -278,36 +278,6 @@ class _DashboardDetailsState extends State<DashboardDetails> {
                 ]),
           ),
         ),
-
-
-
-
-
-
-
-        bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.white,
-          selectedFontSize: 20,
-          unselectedFontSize: 15,
-          selectedIconTheme: IconThemeData(color: Colors.deepOrange),
-          selectedItemColor: Colors.deepOrange,
-          selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.dashboard_outlined),
-              label: 'Dashboard',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.add),
-              label: 'Add Activity',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.receipt),
-              label: 'Report',
-            ),
-          ],
-
-        )
     );
 
   }

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:nms_productivity_portal/Dashboard.dart';
 import 'package:flutter/material.dart';
+import 'package:nms_productivity_portal/bottom_nav_bar.dart';
 
 class IntroScreen extends StatefulWidget {
   @override
@@ -13,7 +14,7 @@ class _IntroScreenState extends State<IntroScreen> {
   void initState() {
 
     super.initState();
-    Timer(Duration(seconds: 3), () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Dashboard())));
+    Timer(Duration(seconds: 3), () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BottomNavBar())));
   }
 
   @override

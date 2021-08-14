@@ -11,11 +11,26 @@ var _pages = [
   Report(),
   AddActivity(),
 ];
+
+class Contact {
+
+  Contact({this.id,this.user,this.mandays});
+
+  int id;
+  String user;
+  String mandays;
+}
+
 class AddActivity extends StatefulWidget {
   @override
   _AddActivityState createState() => _AddActivityState();
 }
 class _AddActivityState extends State<AddActivity> {
+  final _formKey = GlobalKey<FormState>();
+
+
+  Contact _contact= Contact();
+  List<Contact> _contacts = [];
   /*final GlobalKey<FormState> _formKey = GlobalKey();
 
   // This function is triggered when the "Save" button is pressed
@@ -27,12 +42,19 @@ class _AddActivityState extends State<AddActivity> {
     }
   }*/
 
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body:
-          SingleChildScrollView(
-            child: Container(
+      Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[_form(), _list()],
+              ),
+            ),
+            /*child: Container(
               padding: new EdgeInsets.only(left: 16.0, bottom: 0.0, right: 16.0,),
               child: new Column(
                   mainAxisSize: MainAxisSize.max,
@@ -51,7 +73,7 @@ class _AddActivityState extends State<AddActivity> {
                       child: new Column(
                           children: <Widget>[
                             Container(// background
-                              color: Colors.blue[200],
+                              color: Colors.blue,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
@@ -111,7 +133,7 @@ class _AddActivityState extends State<AddActivity> {
                                       height: 54,
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10),
-                                        color: Colors.blue[400],
+                                        color: Colors.pinkAccent,
                                       ),
                                       child: Text(
                                         "Submit",
@@ -121,14 +143,17 @@ class _AddActivityState extends State<AddActivity> {
                                       ),
                                     ),
                                   ),
+                                  new Padding(
+                                    padding: new EdgeInsets.all(7.0),
+                                  ),
                                 ],
                               ),
                             )
                           ]),
                     ),
                   ]),
-            ),
-          ),
+            ),*/
+
 
 
 
@@ -169,10 +194,97 @@ class _AddActivityState extends State<AddActivity> {
       ),*/
 
 
+
+
     );
 
 
   }
+  _list() => Expanded(
+    child: Card(
+      color: Colors.lightGreenAccent,
+      margin: EdgeInsets.fromLTRB(20, 30, 20, 0),
+      child: Scrollbar(
+        child: ListView.builder(
+          padding: const EdgeInsets.all(8),
+          itemBuilder: (context, index) {
+            return Column(
+              children: <Widget>[
+                ListTile(
+                  leading: Icon(
+                    Icons.badge_outlined,
+                    color: Colors.blue,
+                    size: 40.0,
+                  ),
+                  title: Text(
+                    _contacts[index].user.toUpperCase(),
+                    style: TextStyle(
+                        color: Colors.blue, fontWeight: FontWeight.bold),
+                  ),
+                  subtitle: Text(_contacts[index].mandays),
+                  onTap: () {},
+                ),
+                Divider(
+                  height: 5.0,
+                ),
+              ],
+            );
+          },
+          itemCount: _contacts.length,
+        ),
+      ),
+    ),
+  );
+
+
+  _form() => Container(
+    color: Colors.lightBlue,
+    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+    child: Form(
+      key: _formKey,
+      child: Column(
+        children: <Widget>[
+          TextFormField(
+            decoration: InputDecoration(border: OutlineInputBorder(),
+            labelText: 'User/Customer(s)'),
+            validator: (val) =>
+            (val.length == 0 ? 'This field is mandatory' : null),
+            onSaved: (val) => setState(() => _contact.user = val),
+          ),
+  Padding(
+  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+  ),
+          TextFormField(
+            decoration: InputDecoration(border: OutlineInputBorder(),
+                labelText: 'Man Days'),
+            validator: (val) =>
+            val.length == 0 ? 'This field is mandatory' : null,
+            onSaved: (val) => setState(() => _contact.mandays = val),
+          ),
+          Container(
+            margin: EdgeInsets.all(10.0),
+            child: RaisedButton(
+              onPressed:()async {
+                  var form = _formKey.currentState;
+                  if (form.validate()) {
+                    form.save();
+                    print('''
+    User/Customer(s) : ${_contact.user}
+    Man Day's : ${_contact.mandays}
+    ''');
+                    _contacts.add(Contact(id:null,user:_contact.user,mandays:_contact.mandays));
+                    form.reset();
+                  }
+                },
+              child: Text('Submit'),
+              color: Colors.pink,
+              textColor: Colors.white,
+            ),
+          ),
+        ],
+      ),
+    ),
+  );
 }
 
 

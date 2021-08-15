@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/painting.dart';
-import 'package:nms_productivity_portal/Add_activity.dart';
-import 'package:nms_productivity_portal/Dashboard_details.dart';
-import 'package:nms_productivity_portal/PlaceholderWidget.dart';
-import 'package:nms_productivity_portal/Report.dart';
-import 'package:nms_productivity_portal/signin_page.dart';
-import 'package:nms_productivity_portal/bottom_nav_bar.dart';
+import 'package:nms_productivity_portal/views/Add_activity.dart';
+import 'package:nms_productivity_portal/views/Dashboard_details.dart';
+import 'package:nms_productivity_portal/views/PlaceholderWidget.dart';
+import 'package:nms_productivity_portal/views/Report.dart';
+import 'package:nms_productivity_portal/views/signin_page.dart';
+import 'package:nms_productivity_portal/views/bottom_nav_bar.dart';
 
 
 class Dashboard extends StatefulWidget{

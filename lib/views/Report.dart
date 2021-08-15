@@ -1,9 +1,9 @@
-import 'package:nms_productivity_portal/Add_activity.dart';
-import 'package:nms_productivity_portal/Dashboard.dart';
-import 'package:nms_productivity_portal/Report.dart';
+import 'package:nms_productivity_portal/views/Add_activity.dart';
+import 'package:nms_productivity_portal/views/Dashboard.dart';
+import 'package:nms_productivity_portal/views/Report.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:nms_productivity_portal/signin_page.dart';
+import 'package:nms_productivity_portal/views/signin_page.dart';
 
 int _selectedPageIndex = 0;
 

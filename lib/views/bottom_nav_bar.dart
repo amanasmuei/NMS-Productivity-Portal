@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:nms_productivity_portal/Add_activity.dart';
-import 'package:nms_productivity_portal/Dashboard.dart';
-import 'package:nms_productivity_portal/Add_activity.dart';
-import 'package:nms_productivity_portal/signin_page.dart';
+import 'package:nms_productivity_portal/views/Add_activity.dart';
+import 'package:nms_productivity_portal/views/Dashboard.dart';
+import 'package:nms_productivity_portal/views/Add_activity.dart';
+import 'package:nms_productivity_portal/views/signin_page.dart';
 
 class BottomNavBar extends StatefulWidget {
   @override

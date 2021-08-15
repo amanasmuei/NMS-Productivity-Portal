@@ -1,13 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:nms_productivity_portal/bottom_nav_bar.dart';
-import 'package:nms_productivity_portal/signin_page.dart';
+import 'package:get/get.dart';
+import 'routes.dart';
+import 'utils/colors.dart';
 
+void main() {
+  runApp(MyApp());
+}
 
-void main() async{
-  WidgetsFlutterBinding.ensureInitialized();
-  runApp(new MaterialApp(
-    home: new SignInPage(),
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
 
+    // Get.put(AppController());
 
-  ));
+    return GetMaterialApp(  
+      title: 'TSFP Productivity Portal',
+      enableLog: true,
+      defaultTransition: Transition.fade,
+      theme: ThemeData(
+        // Define the default brightness and colors.
+        brightness: Brightness.light,
+        primarySwatch: AppColors.ORANGE,
+
+        // Define the default font family.
+        fontFamily: 'Kanit',
+        backgroundColor: Colors.white,
+        
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      initialRoute: "/",
+      getPages: routes(),
+    );
+  }
 }

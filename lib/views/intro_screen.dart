@@ -1,7 +1,7 @@
 import 'dart:async';
-import 'package:nms_productivity_portal/Dashboard.dart';
+import 'package:nms_productivity_portal/views/Dashboard.dart';
 import 'package:flutter/material.dart';
-import 'package:nms_productivity_portal/bottom_nav_bar.dart';
+import 'package:nms_productivity_portal/views/bottom_nav_bar.dart';
 
 class IntroScreen extends StatefulWidget {
   @override

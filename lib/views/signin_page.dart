@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:nms_productivity_portal/utils/colors.dart';
 import 'package:get/get.dart';
@@ -50,7 +52,7 @@ class InitState extends State<SignInPage> {
                             "TSFP Productivity Portal",
                             style: TextStyle(
                               fontSize: 29,
-                              fontFamily: 'Kanit',
+                              fontFamily: 'Gugi',
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -101,8 +103,7 @@ class InitState extends State<SignInPage> {
                               minWidth: MediaQuery.of(context).size.width,
                               padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
                               onPressed: () async {
-                                Get.defaultDialog(
-                                        title: "Oop!", middleText: "Pressed");
+                                print("masuk");
                                 if (_formKey.currentState.validate()) {
                                   String error = await controller.login(
                                       email: _staffIdTextController.text,
@@ -113,6 +114,9 @@ class InitState extends State<SignInPage> {
                                   } else {
                                     Get.to(IntroScreen());
                                   }
+                                } else {
+                                  Get.defaultDialog(
+                                        title: "Oop!", middleText:"Error");
                                 }
                               },
                               child: Text(

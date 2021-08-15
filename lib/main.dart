@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: AppColors.ORANGE,
 
         // Define the default font family.
-        fontFamily: 'Kanit',
+        fontFamily: 'Gugi',
         backgroundColor: Colors.white,
         
         visualDensity: VisualDensity.adaptivePlatformDensity,

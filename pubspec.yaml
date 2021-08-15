@@ -64,6 +64,9 @@ flutter:
           weight : 400
         - asset : assets/fonts/Kanit-Light.ttf
           weight : 300
+    - family: Gugi
+      fonts:
+        - asset : assets/fonts/Gugi-Regular.ttf
 
   # To add assets to your application, add an assets section, like this:
   # assets:

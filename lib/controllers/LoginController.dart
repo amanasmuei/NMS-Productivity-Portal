@@ -12,7 +12,7 @@ class LoginController extends GetxController {
       loginProcess(true);
       List loginResp = await Api.login(staffId: staffid, password: password);
       print(loginResp[0]['success']);
-      if (loginResp[0]['success'] != false) {
+      if (loginResp[0]['success'] == false) {
         // to store token
         // final prefs = await SharedPreferences.getInstance();
         // prefs.setString("token", loginResp[0]);

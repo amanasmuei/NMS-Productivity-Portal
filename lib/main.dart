@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'routes.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.white,
         
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        cupertinoOverrideTheme: CupertinoThemeData(brightness: Brightness.dark)
       ),
       initialRoute: "/",
       getPages: routes(),

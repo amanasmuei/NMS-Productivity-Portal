@@ -7,6 +7,7 @@ import 'package:nms_productivity_portal/views/PlaceholderWidget.dart';
 import 'package:nms_productivity_portal/views/Report.dart';
 import 'package:nms_productivity_portal/views/signin_page.dart';
 import 'package:nms_productivity_portal/views/bottom_nav_bar.dart';
+import 'package:date_field/date_field.dart';
 
 
 class Dashboard extends StatefulWidget{
@@ -15,18 +16,8 @@ class Dashboard extends StatefulWidget{
 }
 
 class InitState extends State<Dashboard>{
-  DateTime currentDate = DateTime.now();
-  Future<void> _selectDate(BuildContext context) async {
-    final DateTime pickedDate = await showDatePicker(
-        context: context,
-        initialDate: currentDate,
-        firstDate: DateTime(2015),
-        lastDate: DateTime(2050));
-    if (pickedDate != null && pickedDate != currentDate)
-      setState(() {
-        currentDate = pickedDate;
-      });
-  }
+
+  DateTime selectedDate;
 
 
 
@@ -57,22 +48,20 @@ class InitState extends State<Dashboard>{
                           fontWeight: FontWeight.bold
                       ),
                     ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        Text(currentDate.toString(),
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 30.0,
-                              fontWeight: FontWeight.bold
-                          ),),
-                        IconButton(
-                          icon: Icon(Icons.filter_alt),
-                          onPressed: () => _selectDate(context),
-                        ),
-                      ],
-                    ),
+            new Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children:<Widget>[
+                  DateTimeField(
+                      decoration: const InputDecoration(
+                        icon: Icon(Icons.filter_alt),
+                          ),
+                      selectedDate: selectedDate,
+                      onDateSelected: (DateTime value) {
+                        setState(() {
+                          selectedDate = value;
+                        });
+                      }),
+        ]),
 
 
 

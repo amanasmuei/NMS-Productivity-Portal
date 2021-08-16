@@ -29,6 +29,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
       appBar: AppBar(
           backgroundColor: Colors.orangeAccent,
           title: Text("TSFP Productivity Portal"),
+        leading: IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.home),
+        ),
         actions: [
           PopupMenuButton<String>(
             icon: Icon(Icons.account_circle),

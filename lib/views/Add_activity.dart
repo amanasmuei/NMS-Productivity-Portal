@@ -22,6 +22,8 @@ class Contact {
   String mandays;
   String activities;
   String project;
+  String startdate;
+  String enddate;
 }
 
 class AddActivity extends StatefulWidget {

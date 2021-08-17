@@ -22,8 +22,6 @@ class Contact {
   String mandays;
   String activities;
   String project;
-  String startdate;
-  String enddate;
 }
 
 class AddActivity extends StatefulWidget {
@@ -108,6 +106,7 @@ class _AddActivityState extends State<AddActivity> {
   _form() => Container(
     color: Colors.lightBlue,
     padding: EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+  child: SingleChildScrollView(
     child: Form(
       key: _formKey,
       child: Column(
@@ -216,5 +215,5 @@ class _AddActivityState extends State<AddActivity> {
         ],
       ),
     ),
-  );
+  ));
 }

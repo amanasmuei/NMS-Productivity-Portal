@@ -15,11 +15,13 @@ var _pages = [
 
 class Contact {
 
-  Contact({this.id,this.user,this.mandays});
+  Contact({this.id,this.user,this.mandays,this.activities,this.project});
 
   int id;
   String user;
   String mandays;
+  String activities;
+  String project;
 }
 
 class AddActivity extends StatefulWidget {
@@ -34,7 +36,6 @@ class _AddActivityState extends State<AddActivity> {
   Contact _contact= Contact();
   List<Contact> _contacts = [];
   /*final GlobalKey<FormState> _formKey = GlobalKey();
-
   // This function is triggered when the "Save" button is pressed
   void _saveForm() {
     final bool isValid = _formKey.currentState.validate();
@@ -77,11 +78,16 @@ class _AddActivityState extends State<AddActivity> {
                     size: 40.0,
                   ),
                   title: Text(
-                    _contacts[index].user.toUpperCase(),
+                    _contacts[index].activities.toUpperCase(),
                     style: TextStyle(
                         color: Colors.blue, fontWeight: FontWeight.bold),
                   ),
-                  subtitle: Text(_contacts[index].mandays),
+                  subtitle: Column(
+                       children:[
+                         Text(_contacts[index].project),
+                         Text(_contacts[index].user),
+                         Text(_contacts[index].mandays),
+                  ]),
                   onTap: () {},
                 ),
                 Divider(
@@ -106,9 +112,29 @@ class _AddActivityState extends State<AddActivity> {
         children: <Widget>[
           TextFormField(
             decoration: InputDecoration(border: OutlineInputBorder(),
-                labelText: 'User/Customer(s)'),
+                labelText: 'Activities/Operational Supports'),
             validator: (val) =>
             (val.length == 0 ? 'This field is mandatory' : null),
+            onSaved: (val) => setState(() => _contact.activities = val),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+          ),
+          TextFormField(
+            decoration: InputDecoration(border: OutlineInputBorder(),
+                labelText: 'Project Name'),
+            validator: (val) =>
+            val.length == 0 ? 'This field is mandatory' : null,
+            onSaved: (val) => setState(() => _contact.project = val),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+          ),
+          TextFormField(
+            decoration: InputDecoration(border: OutlineInputBorder(),
+                labelText: 'User/Customer(s)'),
+            validator: (val) =>
+            val.length == 0 ? 'This field is mandatory' : null,
             onSaved: (val) => setState(() => _contact.user = val),
           ),
           Padding(
@@ -171,10 +197,12 @@ class _AddActivityState extends State<AddActivity> {
                 if (form.validate()) {
                   form.save();
                   print('''
+    Activities/Operational Supports: ${_contact.activities}
+    Project Name: ${_contact.project}
     User/Customer(s) : ${_contact.user}
     Man Day's : ${_contact.mandays}
     ''');
-                  _contacts.add(Contact(id:null,user:_contact.user,mandays:_contact.mandays));
+                  _contacts.add(Contact(id:null,activities:_contact.activities,project:_contact.project,user:_contact.user,mandays:_contact.mandays));
                   form.reset();
                 }
               },
@@ -188,6 +216,3 @@ class _AddActivityState extends State<AddActivity> {
     ),
   );
 }
-
-
-

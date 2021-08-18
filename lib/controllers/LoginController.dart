@@ -2,7 +2,7 @@ import 'package:get/state_manager.dart';
 import 'package:nms_productivity_portal/services/api.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class LoginController extends GetxController {
+class AuthController extends GetxController {
   var loginProcess = false.obs;
   var error = "";
 
@@ -14,8 +14,10 @@ class LoginController extends GetxController {
       print(loginResp[0]['success']);
       if (loginResp[0]['success'] != false) {
         // to store token
-        // final prefs = await SharedPreferences.getInstance();
-        // prefs.setString("token", loginResp[0]);
+        final prefs = await SharedPreferences.getInstance();
+        prefs.setString("name", loginResp[0]['name']);
+        prefs.setString("token", loginResp[0]['token']);
+        prefs.setString("staff_id", loginResp[0]['staff_id']);
       } else {
         error = loginResp[0]['data'];
         print(error);

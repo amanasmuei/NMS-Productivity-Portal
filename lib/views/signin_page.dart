@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nms_productivity_portal/utils/colors.dart';
 import 'package:get/get.dart';
-import 'package:nms_productivity_portal/controllers/LoginController.dart';
+import 'package:nms_productivity_portal/controllers/AuthController.dart';
 import 'package:nms_productivity_portal/views/intro_screen.dart';
 
 class SignInPage extends StatefulWidget {
@@ -11,7 +11,7 @@ class SignInPage extends StatefulWidget {
 }
 
 class InitState extends State<SignInPage> {
-  final LoginController controller = Get.put(LoginController());
+  final AuthController controller = Get.put(AuthController());
   var _staffIdTextController = TextEditingController(text: "");
   var _passwordTextController = TextEditingController(text: "");
   var _passwordVisible = false;

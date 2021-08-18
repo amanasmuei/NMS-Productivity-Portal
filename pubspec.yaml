@@ -21,17 +21,14 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  cupertino_icons: ^1.0.2
+  date_field: ^2.0.1
   flutter:
     sdk: flutter
-
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
-  http: ^0.13.3
   get: ^4.3.8
+  get_storage: ^2.0.3
+  http: ^0.13.3
   shared_preferences: ^2.0.6
-  date_field: ^2.0.1
 
 dev_dependencies:
   flutter_test:
@@ -39,7 +36,6 @@ dev_dependencies:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
 # The following section is specific to Flutter.
 flutter:
 
@@ -52,34 +48,30 @@ flutter:
   fonts:
     - family: Oswald
       fonts:
-        - asset : assets/fonts/Oswald.ttf
+        - asset: assets/fonts/Oswald.ttf
     - family: Kanit
       fonts:
-        - asset : assets/fonts/Kanit-Bold.ttf
-          weight : 700
-        - asset : assets/fonts/Kanit-SemiBold.ttf
-          weight : 600
-        - asset : assets/fonts/Kanit-BoldItalic.ttf
-          style : italic 
-        - asset : assets/fonts/Kanit-Regular.ttf
-          weight : 400
-        - asset : assets/fonts/Kanit-Light.ttf
-          weight : 300
+        - asset: assets/fonts/Kanit-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Kanit-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Kanit-BoldItalic.ttf
+          style: italic
+        - asset: assets/fonts/Kanit-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Kanit-Light.ttf
+          weight: 300
     - family: Gugi
       fonts:
-        - asset : assets/fonts/Gugi-Regular.ttf
-
+        - asset: assets/fonts/Gugi-Regular.ttf
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
-
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a

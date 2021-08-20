@@ -29,6 +29,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     controller.checkAuth();
     String authToken = token.read('token');
+    
     print(authToken);
 
     return GetMaterialApp(  

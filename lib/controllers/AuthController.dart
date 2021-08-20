@@ -4,6 +4,7 @@ import 'package:nms_productivity_portal/services/api.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthController extends GetxController {
+
   var loginProcess = false.obs;
   var statusAuth = false.obs;
   var error = "";
@@ -13,8 +14,10 @@ class AuthController extends GetxController {
     error = "";
     try {
       loginProcess(true);
+
       List loginResp = await Api.login(staffId: staffid, password: password);
       print(loginResp[0]['success']);
+      
       if (loginResp[0]['success'] != false) {
         // to store token
         print(loginResp[0]['data']['token']);

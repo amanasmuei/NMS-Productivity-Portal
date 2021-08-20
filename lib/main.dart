@@ -4,18 +4,32 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'routes.dart';
 import 'utils/colors.dart';
-
+import 'package:nms_productivity_portal/controllers/AuthController.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await GetStorage.init();
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+
+  final token = GetStorage();
+  final AuthController controller = Get.put(AuthController());
+  // Future<bool> get userToken async {
+  //   var authToken = await token.read("token");
+  //   if(authToken == null) return false;
+  //   return true;
+  // }
+  // final AuthController controller = Get.put(AuthController());
+  // await controller.checkAuth();
+
+  
   @override
   Widget build(BuildContext context) {
-
-    // Get.put(AppController());
+    controller.checkAuth();
+    String authToken = token.read('token');
+    print(authToken);
 
     return GetMaterialApp(  
       title: 'TSFP Productivity Portal',
@@ -33,7 +47,8 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         cupertinoOverrideTheme: CupertinoThemeData(brightness: Brightness.dark)
       ),
-      initialRoute: "/",
+      // ignore: unrelated_type_equality_checks
+      initialRoute: authToken != null ? "/intro":"/signIn",
       getPages: routes(),
     );
   }

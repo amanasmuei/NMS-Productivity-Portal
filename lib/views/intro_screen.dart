@@ -1,7 +1,10 @@
 import 'dart:async';
-import 'package:nms_productivity_portal/views/Dashboard.dart';
+// import 'package:nms_productivity_portal/views/Dashboard.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:nms_productivity_portal/views/bottom_nav_bar.dart';
+
 
 class IntroScreen extends StatefulWidget {
   @override
@@ -14,11 +17,20 @@ class _IntroScreenState extends State<IntroScreen> {
   void initState() {
 
     super.initState();
-    Timer(Duration(seconds: 3), () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BottomNavBar())));
+    // Timer(Duration(seconds: 3), () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BottomNavBar())));
   }
 
   @override
   Widget build(BuildContext context) {
+    final staffName = GetStorage();
+    String staffname = staffName.read('name');
+
+    final String assetName = 'assets/image.svg';
+    final Widget svg = SvgPicture.asset(
+      assetName,
+      semanticsLabel: 'Acme Logo'
+    );
+
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -35,9 +47,7 @@ class _IntroScreenState extends State<IntroScreen> {
                 Container(
                   alignment: Alignment.topCenter,
                   margin: EdgeInsets.only(top: 90),
-                  child: Image.asset("assets/nmslogo.png"),
-                  height: 190,
-                  width: 190,
+                  child: svg
                 ),
 
                 Container(
@@ -56,7 +66,7 @@ class _IntroScreenState extends State<IntroScreen> {
                 Container(
                   margin: EdgeInsets.only(top: 25),
                   child: Text(
-                    "Good Evening, User",
+                    "Welcome, \n" + staffname ,
                     style: TextStyle(
                       color: Colors.black87,
                       /*fontWeight: FontWeight.bold,*/

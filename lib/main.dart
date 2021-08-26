@@ -15,6 +15,7 @@ void main() async {
 class MyApp extends StatelessWidget {
 
   final token = GetStorage();
+  
   final AuthController controller = Get.put(AuthController());
   // Future<bool> get userToken async {
   //   var authToken = await token.read("token");

@@ -31,6 +31,7 @@ class Api {
     var streamedResponse = await request.send();
     var response = await http.Response.fromStream(streamedResponse);
     print(response.body);
+
     final responseJson = json.decode(response.body);
     print(responseJson);
 
@@ -67,6 +68,7 @@ class Api {
             <String, String>{"month": month, "year": year})
     );
 
+    print(response);
 
     // var streamedResponse = await request.send();
     // var response = await http.Response.fromStream(streamedResponse);

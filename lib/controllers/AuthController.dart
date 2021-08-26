@@ -7,6 +7,7 @@ class AuthController extends GetxController {
 
   var loginProcess = false.obs;
   var statusAuth = false.obs;
+
   var error = "";
   final user_token = GetStorage();
 
@@ -16,6 +17,7 @@ class AuthController extends GetxController {
       loginProcess(true);
 
       List loginResp = await Api.login(staffId: staffid, password: password);
+      
       print(loginResp[0]['success']);
       
       if (loginResp[0]['success'] != false) {
